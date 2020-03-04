@@ -10,16 +10,17 @@ class Entity{
     }
 
     getFileContent(){
-        return `
-            package ${this.project.packageName.toLowerCase()}.${this.project.projectName.toLowerCase()}.${this.name}
+        let arquivo = 
+`package ${this.project.packageName.toLowerCase()}.${this.project.projectName.toLowerCase()}.${this.name.toLowerCase()};
 
-            import javax.persistence.Entity;
+import javax.persistence.Entity;
 
-            @Entity
-            public class ${this.name}{
+@Entity
+public class ${this.name}{
 
-                public ${this.name}() {}
-            }
-        `;        
+    public ${this.name}() {}
+
+}`;  
+        return arquivo;      
     }
 }
