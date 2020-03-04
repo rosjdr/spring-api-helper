@@ -1,26 +1,31 @@
 class EntityController {
 
     constructor(){
-        this.entity;
+        let $ = document.querySelector.bind(document);
+        this.inputProjectName  = $('#inputProjectName');
+        this.inputPackagetName = $('#inputPackageName');
+        this.inputEntityName   = $('#inputEntityName');
+        this.entityTextArea = $('#entityTextArea');
     }
 
     criar(event){
         event.preventDefault();
+        let project = this.createProject();
+        let e1 = this.createEntity(project);        
+        this.setEntityTextArea(e1);
+    }
 
-        let $ = document.querySelector.bind(document);
+    setEntityTextArea(e1) {
+        this.entityTextArea.value = e1.getFileContent();
+    }
 
-        let inputProjectName  = $('#inputProjectName');
-        let inputPackagetName = $('#inputPackageName');
-        let inputEntityName   = $('#inputEntityName');
+    createEntity(project) {
+        let entity = new Entity(this.inputEntityName.value);
+        entity.setProject(project);
+        return entity;
+    }
 
-        let project = new Project(inputProjectName.value, inputPackagetName.value);
-
-        let e1 = new Entity(inputEntityName.value);
-        e1.setProject(project);
-
-        this.entity = e1.getFileContent();
-
-        let entityTextArea = $('#entityTextArea');
-        entityTextArea.value = this.entity;
+    createProject() {
+        return new Project(this.inputProjectName.value, this.inputPackagetName.value);
     }
 }
