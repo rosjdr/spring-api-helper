@@ -15,50 +15,58 @@
             <div class="col-lg">
                 <h1>Project settings</h1>
                 <form onsubmit="entityController.criar(event)">
-                    <div class="form-group">
-                        <label for="inputProjectName">Project name</label>
-                        <input type="text" class="form-control" id="inputProjectName">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputPackageName">Default package name</label>
-                        <input type="text" class="form-control" id="inputPackageName">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputEntityName">Entity name</label>
-                        <input type="text" class="form-control" id="inputEntityName">
+                    <div class="row">
+                        <div class="form-group col-4">
+                            <label for="inputProjectName">Project name</label>
+                            <input type="text" class="form-control" id="inputProjectName">
+                        </div>
+                        <div class="form-group col-8">
+                            <label for="inputPackageName">Default package name</label>
+                            <input type="text" class="form-control" id="inputPackageName">
+                        </div>
                     </div>
                     <div class="row">
-                        <div class="card col-lg-6">
-                            <label class="m-2 text-success">Entity fields</label>
-
-                            <div class="form-group">
-                                <label for="inputEmail4">Field</label>
-                                <input type="text" class="form-control" id="inputField" placeholder="Field">
-                            </div>
-                            <div class="form-group">
-                                <label for="inputPassword4">Type</label>
-                                <input type="text" class="form-control" id="inputFieldType" placeholder="Type">
-                            </div>
-                            <button class="mb-2 btn btn-primary">Insert</button>
+                        <div class="form-group col-4">
+                            <label for="inputEntityName">Entity name</label>
+                            <input type="text" class="form-control" id="inputEntityName">
                         </div>
-                        <div class="card col-lg-5 ml-2">
-                            <table class="table table-striped">
-                                <thead>
-                                  <tr>
-                                    <th scope="col">Field</th>
-                                    <th scope="col">Type</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                  </tr>                                  
-                                </tbody>
-                              </table>                          
+                        <div class="form-group col-4">
+                            <div class="card">
+                                <label class="m-2 text-success">Entity fields</label>
+                                <div class="form-group ml-1 mr-1">
+                                    <label for="inputEmail4">Field</label>
+                                    <input type="text" class="form-control" id="inputField" placeholder="Field">
+                                </div>
+                                <div class="form-group ml-1 mr-1">
+                                    <label for="inputPassword4">Type</label>
+                                    <input type="text" class="form-control" id="inputFieldType" placeholder="Type">
+                                </div>
+                                <div class="form-group">
+                                    <button class="ml-2 mb-2 btn btn-primary" onclick="entityController.insertField()" >Insert Field</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-4">
+                            <div class="card">
+                                <table class="table table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Field</th>
+                                        <th scope="col">Type</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                    </tr>                                  
+                                    </tbody>
+                                </table>                          
+                            </div>
                         </div>
                     </div>
-                    <button type="submit" class="m-2 btn btn-primary">Criar</button>
+                    <hr>
+                    <button type="submit" class="m-2 btn btn-primary">Generate Files</button>
                 </form>
             </div>
         </div>
@@ -77,8 +85,9 @@
 
     <script src="app/model/Project.js"></script>
     <script src="app/model/Entity.js"></script>
-    <script src="app/controller/EntityController.js"></script>
+    <script src="app/model/Field.js"></script>
     <script src="app/model/FieldList.js"></script>
+    <script src="app/controller/EntityController.js"></script>
 
     <script>
         let entityController = new EntityController();                   

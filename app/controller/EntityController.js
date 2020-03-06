@@ -6,6 +6,8 @@ class EntityController {
         this.inputPackagetName = $('#inputPackageName');
         this.inputEntityName   = $('#inputEntityName');
         this.entityTextArea = $('#entityTextArea');
+        this.fieldName = $('#inputField');
+        this.fieldType = $('#inputFieldType');
 
         this.fieldList = new FieldList();
     }
@@ -15,6 +17,20 @@ class EntityController {
         let project = this.createProject();
         let e1 = this.createEntity(project);        
         this.setEntityTextArea(e1);
+    }
+
+    insertField(event){        
+        let field = new Field(this.fieldName.value, this.fieldType.value);
+        this.fieldList.add(field);
+        this.clearField();
+
+        console.log(this.fieldList.fields);
+    }
+
+    clearField(){
+        this.fieldName.value = '';
+        this.fieldType.value = '';
+        this.fieldName.focus();
     }
 
     setEntityTextArea(e1) {
