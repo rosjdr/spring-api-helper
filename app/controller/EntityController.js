@@ -6,6 +6,8 @@ class EntityController {
         this.inputPackagetName = $('#inputPackageName');
         this.inputEntityName   = $('#inputEntityName');
         this.entityTextArea = $('#entityTextArea');
+
+        this.fieldList = new FieldList();
     }
 
     criar(event){

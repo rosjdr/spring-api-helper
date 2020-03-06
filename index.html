@@ -27,7 +27,38 @@
                         <label for="inputEntityName">Entity name</label>
                         <input type="text" class="form-control" id="inputEntityName">
                     </div>
-                    <button type="submit" class="btn btn-primary">Criar</button>
+                    <div class="row">
+                        <div class="card col-lg-6">
+                            <label class="m-2 text-success">Entity fields</label>
+
+                            <div class="form-group">
+                                <label for="inputEmail4">Field</label>
+                                <input type="text" class="form-control" id="inputField" placeholder="Field">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword4">Type</label>
+                                <input type="text" class="form-control" id="inputFieldType" placeholder="Type">
+                            </div>
+                            <button class="mb-2 btn btn-primary">Insert</button>
+                        </div>
+                        <div class="card col-lg-5 ml-2">
+                            <table class="table table-striped">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">Field</th>
+                                    <th scope="col">Type</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                  </tr>                                  
+                                </tbody>
+                              </table>                          
+                        </div>
+                    </div>
+                    <button type="submit" class="m-2 btn btn-primary">Criar</button>
                 </form>
             </div>
         </div>
@@ -47,6 +78,7 @@
     <script src="app/model/Project.js"></script>
     <script src="app/model/Entity.js"></script>
     <script src="app/controller/EntityController.js"></script>
+    <script src="app/model/FieldList.js"></script>
 
     <script>
         let entityController = new EntityController();                   
