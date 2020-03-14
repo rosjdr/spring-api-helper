@@ -15,15 +15,20 @@ class FieldListView {
                     </tr>
                     </thead>
                     <tbody>                    
-                        ${fieldList.fields.map(f => {                            
-                            return `
+                        ${fieldList.fields.map(f =>                             
+                            `
                                 <tr>
                                     <td>${f.name}</td>
                                     <td>${f.type}</td>
                                 </tr>
                             `
-                        }).join('')}                                                      
+                        ).join('')}                                                      
                     </tbody>
+                    <tfoot>
+                        <td colspan="2">
+                            <p class="text-right text-success"> Inserted Fields: ${fieldList.count()}</p>
+                        </td>
+                    </tfoot>
                 </table>                          
             </div> `
     }
