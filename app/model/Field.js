@@ -4,4 +4,8 @@ class Field {
         this.name = name;
         this.type = type;
     }
+
+    valido(){
+        return (this.name != '' && this.type != '');
+    }
 }

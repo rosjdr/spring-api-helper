@@ -10,6 +10,8 @@ class EntityController {
         this.fieldType = $('#inputFieldType');
 
         this.fieldList = new FieldList();
+        this.fieldListView = new FieldListView($('#fieldListView'));
+        this.fieldListView.update(this.fieldList);
     }
 
     criar(event){
@@ -18,11 +20,18 @@ class EntityController {
         let e1 = this.createEntity(project);        
         this.setEntityTextArea(e1);
     }
-
-    insertField(event){        
+    
+    insertField(event){    
+        
+        
         let field = new Field(this.fieldName.value, this.fieldType.value);
-        this.fieldList.add(field);
-        this.clearField();
+        if (field.valido()){
+            this.fieldList.add(field);
+            this.fieldListView.update(this.fieldList);
+            this.clearField();
+        } else {
+            alert('Field Inválido');   
+        }
 
         console.log(this.fieldList.fields);
     }
