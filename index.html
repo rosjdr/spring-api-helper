@@ -13,7 +13,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg">
-                <h1>Project settings</h1>
+                <h1>Project Settings</h1>
                 <form onsubmit="entityController.criar(event)">
                     <div class="row">
                         <div class="form-group col-4">
@@ -29,28 +29,33 @@
                         <div class="form-group col-4">
                             <label for="inputEntityName">Entity name</label>
                             <input type="text" class="form-control" id="inputEntityName">
-                        </div>
-                        <div class="form-group col-4">
-                            <div class="card">
-                                <label class="m-2 text-success">Entity fields</label>
-                                <div class="form-group ml-1 mr-1">
-                                    <label for="inputEmail4">Field</label>
-                                    <input type="text" class="form-control" id="inputField" placeholder="Field">
-                                </div>
-                                <div class="form-group ml-1 mr-1">
-                                    <label for="inputPassword4">Type</label>
-                                    <input type="text" class="form-control" id="inputFieldType" placeholder="Type">
-                                </div>
-                                <div class="form-group">
-                                    <button class="ml-2 mb-2 btn btn-primary" onclick="entityController.insertField()" >Insert Field</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group col-4" id="fieldListView"></div>
+                        </div>                        
                     </div>
-                    <hr>
                     <button type="submit" class="m-2 btn btn-primary">Generate Files</button>
                 </form>
+            </div>
+        </div>
+        <hr>
+        <div class="col-lg">
+            <h2>Field Entity Settings</h2>
+            <div class="row">
+                <div class="form-group col-7">
+                    <div class="card">
+                        <label class="m-2 text-success">Entity fields</label>
+                        <div class="form-group ml-1 mr-1">
+                            <label for="inputEmail4">Field</label>
+                            <input type="text" class="form-control" id="inputField" placeholder="Field">
+                        </div>
+                        <div class="form-group ml-1 mr-1">
+                            <label for="inputPassword4">Type</label>
+                            <input type="text" class="form-control" id="inputFieldType" placeholder="Type">
+                        </div>
+                        <div class="form-group">
+                            <button class="ml-2 mb-2 btn btn-primary" onclick="entityController.insertField()" >Insert Field</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-5" id="fieldListView"></div>
             </div>
         </div>
         <div class="row pt-4">
