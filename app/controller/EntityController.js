@@ -12,6 +12,10 @@ class EntityController {
         this.fieldList = new FieldList();
         this.fieldListView = new FieldListView($('#fieldListView'));
         this.fieldListView.update(this.fieldList);
+
+        this._mensagem = new Mensagem();
+        this._mensagemView = new MensagemView($('#mensagemView'));
+        this._mensagemView.update(this._mensagem);
     }
 
     criar(event){
@@ -28,6 +32,8 @@ class EntityController {
         if (field.valido()){
             this.fieldList.add(field);
             this.fieldListView.update(this.fieldList);
+            this._mensagem.mensagem = 'Campo incluído com sucesso!';
+            this._mensagemView.update(this._mensagem); 
             this.clearField();
         } else {
             alert('Field Inválido');   

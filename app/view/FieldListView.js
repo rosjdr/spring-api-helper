@@ -1,7 +1,7 @@
-class FieldListView {
+class FieldListView extends View{    
 
-    constructor(elemento){
-        this.elemento = elemento;
+    constructor(elemento) {
+        super(elemento);
     }
 
     template(fieldList){
@@ -31,9 +31,5 @@ class FieldListView {
                     </tfoot>
                 </table>                          
             </div> `
-    }
-
-    update(fieldList) {
-        this.elemento.innerHTML = this.template(fieldList);
     }
 }
